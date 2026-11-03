@@ -1,0 +1,45 @@
+# DefenseTechAZ
+
+An independent directory of Arizona defense and dual-use technology companies.
+
+## Edit the directory
+
+**[data/companies.csv](data/companies.csv) is the source of truth.** Open it on GitHub, click the pencil, edit or add a row, and commit to `main` (or submit a pull request). Once GitHub Pages is enabled, each commit automatically validates the data, rebuilds the website, and deploys it. The Google Sheet is the initial import, not a live dependency.
+
+Columns: `Company`, `City`, `Website`, `Blurb`, `Founder`, `Source`. Founder is optional; all other fields are required. Use full HTTPS website links, quote fields containing commas, keep company names unique, and include public sources for new listings. Avoid unsubstantiated claims about military customers or contracts. The CSV is available for download on the website, including its source and founder fields.
+
+The initial 14 entries and their descriptions were imported as supplied from the owner's [Google Sheet](https://docs.google.com/spreadsheets/d/1qLFFtqne1_MPuG09vrafc4MYpN3rL478IO1mXH5B52s/edit). They have not been independently verified. Cryo X Co was added using its [company overview](https://cryox.co/about) and [product factsheet naming founder Jordan Fourcher](https://www.cryox.co/cryopaint_factsheet.pdf). Its location follows the company overview (Tempe). Its inclusion covers dual-use thermal management, not a claim of defense contracts.
+
+## GitHub Pages hosting
+
+Expected URL after successful deployment: **https://DrewSBAI.github.io/DefenseTechAZ/**
+
+1. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Run **Build and deploy directory** from the Actions tab, or push a change to `main`.
+3. Wait for the deployment job to succeed. Subsequent edits publish automatically.
+
+GitHub Pages from a private personal repository requires GitHub Pro. The standard Pages site is public even when its source repository is private. On GitHub Free, either upgrade to Pro or deliberately make the repository public when ready, then enable Pages. Do not change repository visibility merely to fix a deployment failure.
+
+GitHub's documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+
+The site links to GitHub for suggestions. While this repository is private, only collaborators can use those links. Once public, anyone with a GitHub account can suggest an issue or pull request. Remove the private-repository note in `site/index.html` when changing visibility.
+
+## Local preview
+
+Requires Python 3. No packages or JavaScript build tools are needed.
+
+```sh
+python3 scripts/build.py
+python3 -m http.server 8000 --directory _site
+```
+
+Open http://localhost:8000. Re-run the build after editing data or source files.
+
+## Structure
+
+- `data/companies.csv` — editable company records
+- `site/` — HTML template, styling, and progressive search/filter controls
+- `scripts/build.py` — validates CSV and generates escaped HTML in `_site/`
+- `.github/workflows/pages.yml` — validates pull requests; builds and deploys `main`
+
+The directory works without JavaScript; JavaScript adds search and location filtering. Generated files are not committed. GitHub Pages serves only the generated website and downloadable company CSV.

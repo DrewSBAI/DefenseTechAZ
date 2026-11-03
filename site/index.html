@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Arizona’s defense and dual-use technology companies. A growing directory of the teams building across the state.">
+  <meta name="theme-color" content="#122b29">
+  <title>DefenseTechAZ — Arizona’s defense technology directory</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#directory">Skip to directory</a>
+  <header class="masthead"><a class="brand" href="./"><span class="mark" aria-hidden="true">AZ</span> DefenseTech<span>AZ</span></a><a class="header-link" href="#directory">Explore the directory <span aria-hidden="true">↘</span></a></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> ARIZONA / DEFENSE + DUAL-USE TECHNOLOGY</p>
+        <h1 id="title">Built in Arizona.<br><span>Ready for what’s next.</span></h1>
+        <p class="intro">Meet the companies shaping Arizona’s defense technology ecosystem. From autonomous systems to advanced materials, discover what’s being built across the state.</p>
+        <a class="hero-link" href="#directory">Find a company <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="terrain" aria-hidden="true"><svg viewBox="0 0 400 400" fill="none"><g stroke="currentColor" stroke-width="1"><path d="M20 340 70 250 140 210 170 115 240 150 300 65 390 95M0 370 85 270 145 240 185 145 250 180 320 90 400 120M0 400 100 295 160 270 200 180 265 210 340 115 420 145M45 400 120 320 180 300 220 215 285 245 360 140 440 180M85 420 140 350 200 330 240 250 305 275 380 170 450 210M130 430 165 380 220 365 260 285 330 310 400 205M0 300 45 220 115 180 150 85 220 120 280 35 390 65M0 250 25 190 90 150 130 50 200 85 260 5 380 30"/></g><path d="M125 110H275V305L225 340 125 285Z" stroke="currentColor" stroke-width="2"/><circle cx="203" cy="243" r="5" fill="currentColor"/><circle cx="203" cy="243" r="16" stroke="currentColor"/></svg><span>34.0489° N &nbsp; 111.0937° W</span></div>
+    </section>
+    <section id="directory" aria-labelledby="directory-title">
+      <div class="section-heading"><div><p class="eyebrow">THE ECOSYSTEM</p><h2 id="directory-title">Arizona company directory<span class="count">{{COUNT}}</span></h2></div><a class="download" href="./companies.csv" download>Download CSV <span aria-hidden="true">↓</span></a></div>
+      <div class="filters" hidden><div class="search-field"><label for="search">Search companies</label><input id="search" type="search" placeholder="Company, capability, or founder…" autocomplete="off"></div><div><label for="city">Location</label><select id="city"><option value="">All Arizona locations</option>{{CITIES}}</select></div><button id="reset" type="button">Clear filters</button></div>
+      <p id="results" class="results" role="status" aria-live="polite">{{COUNT}} companies in the directory</p>
+      <div class="table-wrap"><table><caption class="sr-only">Arizona defense and dual-use technology companies</caption><thead><tr><th scope="col" class="number">#</th><th scope="col">Company</th><th scope="col">Location</th><th scope="col">What they’re building</th></tr></thead><tbody>{{ROWS}}</tbody></table></div>
+      <p id="empty" class="empty" hidden>No companies match your search. Try another term or clear the filters.</p>
+      <p class="directory-note">A growing, independently maintained directory of defense and dual-use companies. Listings are informational and do not imply endorsement or verified defense contracts.</p>
+    </section>
+    <aside class="contribute"><div><p class="eyebrow">HELP BUILD THE DIRECTORY</p><h2>Know a company that belongs here?</h2><p>Suggest an addition or correction to keep Arizona’s ecosystem connected.</p></div><a href="https://github.com/DrewSBAI/DefenseTechAZ/issues/new?title=Company%20addition%20or%20correction">Suggest an update <span aria-hidden="true">↗</span></a></aside>
+  </main>
+  <footer><a class="brand" href="./">DefenseTech<span>AZ</span></a><p>Independent directory · Arizona, USA</p><a href="https://github.com/DrewSBAI/DefenseTechAZ">View on GitHub ↗</a><p class="repo-note">GitHub contributions are available to repository collaborators while the repository is private.</p></footer>
+</body>
+</html>
