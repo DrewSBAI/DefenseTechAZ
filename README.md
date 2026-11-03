@@ -12,7 +12,7 @@ The initial 14 entries and their descriptions were imported as supplied from the
 
 ## GitHub Pages hosting
 
-Expected URL after successful deployment: **https://DrewSBAI.github.io/DefenseTechAZ/**
+Website: **https://DrewSBAI.github.io/DefenseTechAZ/**
 
 1. Ensure the account supports Pages for this repository (see below).
 2. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
@@ -24,7 +24,7 @@ GitHub Pages from a private personal repository requires GitHub Pro. The standar
 
 GitHub's documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
 
-The site links to GitHub for suggestions. While this repository is private, only collaborators can use those links. Once public, anyone with a GitHub account can suggest an issue or pull request. Remove the private-repository note in `site/index.html` when changing visibility.
+This public repository belongs to the personal account **DrewSBAI**, not the Swarmbotics AI organization. The site links to GitHub for suggestions; anyone with a GitHub account can suggest an issue or pull request.
 
 ## Local preview
 
