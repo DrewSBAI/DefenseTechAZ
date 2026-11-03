@@ -14,9 +14,11 @@ The initial 14 entries and their descriptions were imported as supplied from the
 
 Expected URL after successful deployment: **https://DrewSBAI.github.io/DefenseTechAZ/**
 
-1. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
-2. Run **Build and deploy directory** from the Actions tab, or push a change to `main`.
-3. Wait for the deployment job to succeed. Subsequent edits publish automatically.
+1. Ensure the account supports Pages for this repository (see below).
+2. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Under **Settings → Secrets and variables → Actions → Variables**, create a repository variable named `PAGES_ENABLED` with value `true`. This keeps deployments disabled until hosting is available, while build validation continues.
+4. Run **Build and deploy directory** from the Actions tab, or push a change to `main`.
+5. Wait for the deployment job to succeed. Subsequent edits publish automatically.
 
 GitHub Pages from a private personal repository requires GitHub Pro. The standard Pages site is public even when its source repository is private. On GitHub Free, either upgrade to Pro or deliberately make the repository public when ready, then enable Pages. Do not change repository visibility merely to fix a deployment failure.
 
