@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def build():
     with (ROOT / 'data/companies.csv').open(newline='', encoding='utf-8') as source:
         reader = csv.DictReader(source)
-        required = {'Company', 'City', 'Website', 'Blurb', 'Founder', 'Source'}
+        required = {'Company', 'City', 'Website', 'Blurb', 'Source'}
         if set(reader.fieldnames or []) != required:
             raise ValueError('CSV columns must be: ' + ', '.join(sorted(required)))
         companies = list(reader)
@@ -21,7 +21,7 @@ def build():
     for company in companies:
         if None in company or any(value is None for value in company.values()):
             raise ValueError('Malformed CSV row')
-        if any(not company[field].strip() for field in required - {'Founder'}):
+        if any(not company[field].strip() for field in required):
             raise ValueError('Missing required field: ' + repr(company))
         url = urlsplit(company['Website'])
         if url.scheme not in {'https', 'http'} or not url.netloc:
@@ -34,10 +34,9 @@ def build():
     rows = []
     for index, company in enumerate(companies, 1):
         c = {key: html.escape(value, quote=True) for key, value in company.items()}
-        founder = f'<span class="founder">Founder: {c["Founder"]}</span>' if c['Founder'] else ''
         rows.append(f'''<tr data-city="{c['City']}">
           <td class="number">{index:02d}</td>
-          <th scope="row"><a href="{c['Website']}">{c['Company']} <span aria-hidden="true">↗</span></a>{founder}</th>
+          <th scope="row"><a href="{c['Website']}">{c['Company']} <span aria-hidden="true">↗</span></a></th>
           <td class="city">{c['City']}</td><td class="description">{c['Blurb']}</td>
         </tr>''')
     cities = sorted({c['City'] for c in companies})
